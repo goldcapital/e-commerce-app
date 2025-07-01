@@ -1,0 +1,23 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://localhost:8080/realms/micro-service"
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: test
+      password: test
+      database: customer
+      authentication-database: admin
+server:
+    port: 8090
+kc-props:
+  username: ${KEYCLOAK_USERNAME:user}
+  password: ${KEYCLOAK_PASSWORD:12345}
+  clientId: ${KEYCLOAK_CLIENT_ID:myclient}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:XCwxuPCuxey47ZwqsTZ80t0JsekBq0Rn}
+  realm: ${KEYCLOAK_REALM:micro-service}
+  serverUrl: ${KEYCLOAK_AUTH_SERVER_URL:http://localhost:8080}

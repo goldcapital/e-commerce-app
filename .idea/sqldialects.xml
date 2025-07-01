@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/services/product/src/main/resources/db/migration/V1__init_database.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/services/product/src/main/resources/db/migration/V2__product_update.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/services/product/src/main/resources/db/migration/V3_produc_availability_update.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/services/product/src/main/resources/db/migration/V4__insert_category_database.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/services/product/src/main/resources/db/migration/V5__insert_product_database.sql" dialect="GenericSQL" />
+  </component>
+</project>
