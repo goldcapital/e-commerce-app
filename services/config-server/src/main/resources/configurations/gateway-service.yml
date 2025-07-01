@@ -30,6 +30,10 @@ spring:
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/api/v1/payment/**
+        - id: file-service
+          uri: lb://FILE-SERVICE
+          predicates:
+              - Path=/api/v1/file/**
 
 
 server:

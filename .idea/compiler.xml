@@ -21,7 +21,7 @@
         </processorPath>
         <module name="notification" />
       </profile>
-      <profile name="Annotation profile for customer" enabled="true">
+      <profile name="Annotation profile for file-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -33,17 +33,9 @@
         </processorPath>
         <module name="payment" />
         <module name="product" />
+        <module name="file-service" />
         <module name="customer" />
         <module name="order" />
-      </profile>
-      <profile name="Annotation profile for file-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="file-service" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,29 +1,15 @@
 package com.example.ecommerce.service;
 
-import com.example.ecommerce.FileManagementDTO;
-import com.example.ecommerce.repository.FileManagementRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.example.ecommerce.dto.response.FileManagementDTO;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.multipart.MultipartFile;
 import uz.isd.commons.result.CommonResultData;
 
-import static com.example.ecommerce.utile.FilesUtils.createPath;
-import static com.example.ecommerce.utile.FilesUtils.getFileName;
+import java.util.UUID;
 
+public interface FileManagementService {
+    CommonResultData<FileManagementDTO> uploadFile(MultipartFile file, String bucketName);
+    CommonResultData<FileManagementDTO> downloadFile(UUID fileId, HttpServletResponse servletResponse);
+    void deleteFile(UUID id);
 
-@Service
-@RequiredArgsConstructor
-public class FileManagementService {
-    private final MinioService minioService;
-    private final FileManagementRepository fileManagementRepository;
-
-    public CommonResultData<FileManagementDTO> uploadFile(MultipartFile file, String bucketName) {
-
-        var fileName = getFileName(file.getOriginalFilename());
-        var filePath = createPath(fileName);
-
-        var genericResponse = minioService.uploadFile(file, bucketName, fileName);
-        var saved=
-        return null;
-    }
 }

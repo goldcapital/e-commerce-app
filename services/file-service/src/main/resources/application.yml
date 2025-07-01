@@ -1,8 +1,5 @@
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
   application:
      name: file-service
-
-minio:
-   url: http://localhost:9000
-   access-key: admin
-   secret-key: admin123
