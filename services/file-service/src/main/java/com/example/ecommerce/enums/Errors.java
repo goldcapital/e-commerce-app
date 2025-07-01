@@ -1,4 +1,4 @@
-package com.example.ecommerce;
+package com.example.ecommerce.enums;
 
 import uz.isd.commons.result.HasResult;
 
