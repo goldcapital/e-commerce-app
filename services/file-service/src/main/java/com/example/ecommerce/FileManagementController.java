@@ -22,9 +22,9 @@ public class FileManagementController {
     private final FileService fileService;
 
     @PostMapping(value = "/upload")
-    public CommonResultData<FileManagementDTO> uploadFile(@RequestParam(name = "file")
+    public ResponseEntity<FileManagementDTO> uploadFile(@RequestParam(name = "file")
                                                           MultipartFile file) {
-        return fileService.uploadFile(file, Constants.BUCKET_NAME);
+        return ResponseEntity.ok(fileService.uploadFile(file, Constants.BUCKET_NAME));
     }
 
     @GetMapping("/download/{id}")

@@ -1,7 +1,6 @@
 package com.example.prodcut.product.repository;
 
-import com.example.prodcut.product.Product;
-import jakarta.validation.constraints.NotNull;
+import com.example.prodcut.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
