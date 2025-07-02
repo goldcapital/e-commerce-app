@@ -6,6 +6,7 @@ public record ProductPurchaseResponse(
         Integer productId,
         String name,
         String description,
+        String productColor,
         BigDecimal price,
         double quantity
 ) {

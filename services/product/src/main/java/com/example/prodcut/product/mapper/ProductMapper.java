@@ -2,11 +2,13 @@ package com.example.prodcut.product.mapper;
 
 import com.example.prodcut.product.Category;
 import com.example.prodcut.product.Product;
+import com.example.prodcut.product.dto.request.ProductPurchaseRequest;
 import com.example.prodcut.product.dto.request.ProductRequest;
 import com.example.prodcut.product.dto.response.ProductPurchaseResponse;
 import com.example.prodcut.product.dto.response.ProductResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
@@ -26,5 +28,7 @@ public interface ProductMapper {
 
     @Mapping(target = "productId", source = "product.id")
     @Mapping(target = "quantity",source = "quantity")
-    ProductPurchaseResponse toProductPurchaseResponse(Product product, double quantity);
+    @Mapping(target = "productColor",source = "color")
+    ProductPurchaseResponse toProductPurchaseResponse(Product product,@MappingTarget ProductPurchaseRequest request);
+
 }

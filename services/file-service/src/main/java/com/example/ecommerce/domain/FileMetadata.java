@@ -17,7 +17,7 @@ import java.util.UUID;
 @Entity
 @Table(name ="file")
 @Accessors(chain = true)
-public class FileManagement extends AbstractAuditingEntity implements Serializable {
+public class FileMetadata extends AbstractAuditingEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

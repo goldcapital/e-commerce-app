@@ -1,10 +1,10 @@
 package com.example.ecommerce.service.impl;
 
-import com.example.ecommerce.domain.FileManagement;
+import com.example.ecommerce.domain.FileMetadata;
 import com.example.ecommerce.dto.response.FileManagementDTO;
 import com.example.ecommerce.mapper.FileManagementMapper;
 import com.example.ecommerce.repository.FileManagementRepository;
-import com.example.ecommerce.service.FileManagementService;
+import com.example.ecommerce.service.FileService;
 import com.example.ecommerce.service.MinioService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ import static java.lang.String.format;
 
 @Service
 @RequiredArgsConstructor
-public class FileServiceImpl implements FileManagementService {
+public class FileServiceImpl implements FileService {
     private static final Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
     private final MinioService minioService;
     private final FileManagementRepository fileManagementRepository;
@@ -80,7 +80,7 @@ public class FileServiceImpl implements FileManagementService {
     }
 
 
-    private FileManagement getFileOrThrow(UUID fileId) {
+    private FileMetadata getFileOrThrow(UUID fileId) {
         return fileManagementRepository.findById(fileId).orElseThrow(() -> new IllegalArgumentException(format(FILE_NOT_FOUND, fileId)));
     }
 

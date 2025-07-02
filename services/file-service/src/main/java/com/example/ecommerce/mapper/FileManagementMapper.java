@@ -1,6 +1,6 @@
 package com.example.ecommerce.mapper;
 
-import com.example.ecommerce.domain.FileManagement;
+import com.example.ecommerce.domain.FileMetadata;
 import com.example.ecommerce.dto.response.FileManagementDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +12,7 @@ public interface FileManagementMapper {
     @Mapping(target = "fileName", source = "fileName")
     @Mapping(target = "bucketName", source = "bucket")
     @Mapping(target = "extension", expression = "java(getExtension(originalFilename))")
-    FileManagement toEntity(String filePath, String fileName, String originalFilename, String bucket);
+    FileMetadata toEntity(String filePath, String fileName, String originalFilename, String bucket);
 
 
     @Named("getExtension")
@@ -23,5 +23,5 @@ public interface FileManagementMapper {
     }
 
 
-    FileManagementDTO toDto(FileManagement saved);
+    FileManagementDTO toDto(FileMetadata saved);
 }

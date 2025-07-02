@@ -7,9 +7,11 @@ import uz.isd.commons.result.CommonResultData;
 
 import java.util.UUID;
 
-public interface FileManagementService {
+public interface FileService {
     CommonResultData<FileManagementDTO> uploadFile(MultipartFile file, String bucketName);
+
     CommonResultData<FileManagementDTO> downloadFile(UUID fileId, HttpServletResponse servletResponse);
+
     void deleteFile(UUID id);
 
 }
