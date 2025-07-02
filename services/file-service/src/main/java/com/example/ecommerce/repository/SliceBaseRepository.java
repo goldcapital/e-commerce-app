@@ -10,6 +10,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 import java.io.Serializable;
 @NoRepositoryBean
 public interface SliceBaseRepository <T,ID extends Serializable> extends JpaRepository<T,ID> {
-    Slice<T> findAllSliced(@Nullable Specification<T> spec, Pageable pageable);
+//    Slice<T> findAllSliced(@Nullable Specification<T> spec, Pageable pageable);
 
 }
