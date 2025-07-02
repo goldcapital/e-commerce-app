@@ -1,4 +1,4 @@
-package com.example.prodcut.product;
+package com.example.prodcut.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

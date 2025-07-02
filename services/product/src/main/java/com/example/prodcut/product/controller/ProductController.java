@@ -9,8 +9,10 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import static org.springframework.data.domain.PageRequest.of;
 
@@ -23,9 +25,10 @@ import java.util.List;
 public class ProductController {
     private final ProductService productService;
 
-    @PostMapping("/create")
-    public ResponseEntity<Integer> createProduct(@RequestBody @Valid ProductRequest request) {
-        return ResponseEntity.ok(productService.create(request));
+    @PostMapping(value = "/create",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Integer> createProduct(@RequestBody @Valid ProductRequest request,
+                                                 @RequestParam("image")MultipartFile multipartFile) {
+        return ResponseEntity.ok(productService.create(request,multipartFile));
     }
 
     @PostMapping("/purchase")

@@ -1,7 +1,7 @@
 package com.example.prodcut.product.mapper;
 
-import com.example.prodcut.product.Category;
-import com.example.prodcut.product.Product;
+import com.example.prodcut.domain.Category;
+import com.example.prodcut.domain.Product;
 import com.example.prodcut.product.dto.request.ProductPurchaseRequest;
 import com.example.prodcut.product.dto.request.ProductRequest;
 import com.example.prodcut.product.dto.response.ProductPurchaseResponse;
@@ -27,8 +27,8 @@ public interface ProductMapper {
     ProductResponse toDto(Product product);
 
     @Mapping(target = "productId", source = "product.id")
-    @Mapping(target = "quantity",source = "quantity")
-    @Mapping(target = "productColor",source = "color")
-    ProductPurchaseResponse toProductPurchaseResponse(Product product,@MappingTarget ProductPurchaseRequest request);
+    @Mapping(target = "quantity", source = "request.quantity")
+    @Mapping(target = "productColor", source = "product.color")
+    ProductPurchaseResponse toProductPurchaseResponse(Product product, ProductPurchaseRequest request);
 
 }

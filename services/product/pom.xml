@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 		<mapsturct.version>1.5.5.Final</mapsturct.version>
+		<commons.version>0.0.3</commons.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +43,17 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>uz.isd</groupId>
+			<artifactId>commons</artifactId>
+			<version>${commons.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/commons-0.0.3.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

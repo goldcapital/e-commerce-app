@@ -32,7 +32,7 @@ public class FileServiceImpl implements FileService {
     private final FileManagementMapper fileManagementMapper;
 
     @Override
-    public CommonResultData<FileManagementDTO> uploadFile(MultipartFile file, String bucketName) {
+    public FileManagementDTO uploadFile(MultipartFile file, String bucketName) {
         if (file == null || file.isEmpty()) {
             throw new IllegalArgumentException(FILE_MUST_NOT_NULL);
         }
@@ -48,7 +48,7 @@ public class FileServiceImpl implements FileService {
         var saved = fileManagementRepository.save(fileManagementMapper.toEntity(filePath,
                 fileName, file.getOriginalFilename(), genericResponse.bucket()));
 
-        return new CommonResultData<>(fileManagementMapper.toDto(saved));
+        return fileManagementMapper.toDto(saved);
     }
 
     @Override

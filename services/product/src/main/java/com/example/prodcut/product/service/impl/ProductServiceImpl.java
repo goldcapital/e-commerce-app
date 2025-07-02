@@ -1,4 +1,4 @@
-package com.example.prodcut.product.service;
+package com.example.prodcut.product.service.impl;
 
 import com.example.prodcut.product.dto.request.ProductPurchaseRequest;
 import com.example.prodcut.product.dto.request.ProductRequest;
@@ -8,10 +8,12 @@ import com.example.prodcut.product.exp.EntityNotFoundException;
 import com.example.prodcut.product.exp.ProductPurchaseException;
 import com.example.prodcut.product.mapper.ProductMapper;
 import com.example.prodcut.product.repository.ProductRepository;
+import com.example.prodcut.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,8 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
     private final ProductMapper productMapper;
 
-    public Integer create(ProductRequest request) {
+    public Integer create(ProductRequest request, MultipartFile multipartFile) {
+
         return repository.save(productMapper.toEntity(request)).id;
     }
 
